@@ -3,6 +3,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_firestore_crud/screens/homepage.dart';
+import 'package:get/route_manager.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
           print("Something is wrong");
         }
         if(snapshot.connectionState == ConnectionState.done){
-          return MaterialApp(
+          return GetMaterialApp(
             title: 'Flutter Demo',
             theme: ThemeData(
               primarySwatch: Colors.blue,

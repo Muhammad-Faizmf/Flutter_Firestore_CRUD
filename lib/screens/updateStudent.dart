@@ -3,6 +3,7 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class UpdateStudent extends StatefulWidget {
   final String id;
@@ -79,7 +80,7 @@ class _UpadateStudentState extends State<UpdateStudent> {
                     TextFormField(
                       initialValue: email,
                       onChanged: (value) => email=value,
-                      decoration: const InputDecoration(
+                      decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         hintText: "Email",
                         errorStyle: TextStyle(
@@ -129,12 +130,13 @@ class _UpadateStudentState extends State<UpdateStudent> {
                       children: [
                         ElevatedButton(onPressed: (){
                           updateUser(widget.id, name, email, password);
-                          Navigator.pop(context);
+                          Get.back();
                         }, child: const Text("Update")),
-                        ElevatedButton(onPressed: (){},
+                        ElevatedButton(onPressed: (){
+                        },
                         style: ElevatedButton.styleFrom(
                           primary: Colors.grey
-                        ), child: const Text("Reset"),)
+                        ), child: Text("Reset"),)
                       ],
                     )
                  ],

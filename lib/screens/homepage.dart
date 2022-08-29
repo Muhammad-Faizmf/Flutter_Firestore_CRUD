@@ -4,6 +4,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_firestore_crud/screens/addStudentPage.dart';
 import 'package:flutter_firestore_crud/screens/listStudentPage.dart';
+import 'package:get/get.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({ Key? key }) : super(key: key);
@@ -22,11 +23,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             Text("Flutter Firestore CRUD"),
             ElevatedButton(onPressed: (){
-              Navigator.push(
-                context, MaterialPageRoute(
-                  builder: (context)=>AddStudentPage()
-                )
-              );
+             Get.to(AddStudentPage());
             },style: ElevatedButton.styleFrom(
               primary: Colors.purple
             ), child: Text("Add")

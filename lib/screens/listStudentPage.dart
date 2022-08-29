@@ -4,6 +4,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_firestore_crud/screens/updateStudent.dart';
+import 'package:get/get.dart';
 
 class ListStudentPage extends StatefulWidget {
   const ListStudentPage({ Key? key }) : super(key: key);
@@ -119,13 +120,7 @@ class _ListStudentPageState extends State<ListStudentPage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               IconButton(onPressed: (){
-                                Navigator.push(
-                                  context, MaterialPageRoute(
-                                    builder: (context)=>UpdateStudent(
-                                      id: storedoc[i]['id']
-                                    )
-                                  )
-                                );
+                                Get.to(UpdateStudent(id: storedoc[i]['id']));
                               },icon: Icon(Icons.edit, color: Colors.orange,)),
                               IconButton(onPressed: (){
                                 deleteUser(storedoc[i]['id']);
